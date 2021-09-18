@@ -8,6 +8,7 @@ function Menu(){
             <a href="#">Магазин</a>
             <a href="#">Отзывы</a>
             <a href="#">Доставка</a>
+            <a href="#">Контакты</a>
         </div>
     )
 }
