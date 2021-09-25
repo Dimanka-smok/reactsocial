@@ -1,0 +1,16 @@
+.otpravka{
+    background-color: #fff;
+    width:30px;
+    transition: 0.3s;
+}
+
+.otpravka:active{
+    background-color: #292929;
+    transform: scale(0.9);
+    border-radius: 50px;
+}
+
+.button-right{
+    position: relative;
+    transform: translateX(96%); 
+}
