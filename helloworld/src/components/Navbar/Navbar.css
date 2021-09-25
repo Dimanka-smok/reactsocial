@@ -1,6 +1,10 @@
 .navbar{
    padding:0;
    text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
   }
 
 a{
@@ -15,3 +19,4 @@ a{
 a:hover{
  background-color: #636363;
 }
+
