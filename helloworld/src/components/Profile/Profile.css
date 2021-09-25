@@ -2,45 +2,18 @@
     grid-area: "p";
   }
 
-  input{
-    border: none;
-    outline:none;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #292929;
-    margin-right: 10px;
-  }
+.me img{
+  width: 100%;
+  border-radius: 10px;
+}
 
-  button{
-    border: none;
-    outline:none;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #292929;
-    color:grey;
-  }
+.me{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 5px;
+  grid-gap: 10px;
+}
 
-  
-
-  .post img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    object-fit: cover;
-  }
-
-  .post h3{
-    display: inline-block;
-    position: absolute;
-    top:50%;
-    transform: translateY(-50%);
-    margin-left: 10px;
-  }
-
-  .post-data{
-    position: relative;
-  }
-
-  .post{
-    margin: 20px 5px;
-  }
+.profile > div{
+  margin: 10px 0;
+}

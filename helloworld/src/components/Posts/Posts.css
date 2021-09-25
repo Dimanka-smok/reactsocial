@@ -1,0 +1,21 @@
+input{
+    border: none;
+    outline:none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #292929;
+    margin-right: 10px;
+  }
+
+  button{
+    border: none;
+    outline:none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #292929;
+    color:grey;
+  }
+
+  
+
+ 

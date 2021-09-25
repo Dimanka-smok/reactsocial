@@ -1,0 +1,22 @@
+.post img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    object-fit: cover;
+  }
+
+  .post h3{
+    display: inline-block;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+  }
+
+  .post-data{
+    position: relative;
+  }
+
+  .post{
+    margin: 20px 5px;
+  }
