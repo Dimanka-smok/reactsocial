@@ -7,7 +7,7 @@ function Dialog (props){
             <div className="justify-content-end">
             <h3>{props.name} сообщает:</h3>
             </div>
-            <p>{props.message}</p>
+            <p className="message-text">{props.message}</p>
         </div>
     )
 }

@@ -22,7 +22,6 @@ function Posts() {
             <Post img={Cat1} message={message2} name={"Станислав"}/>
             <Post img={Enot} message={message3} name={"Андрей"}/>
             <Post img={Hedgehog} message={message4} name={"Виктория"}/>
-            <Dialogs/>
         </div>
     )
 }

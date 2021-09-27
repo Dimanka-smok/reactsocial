@@ -1,9 +1,6 @@
 .navbar{
    padding:0;
    text-align: center;
-   display: flex;
-   align-items: center;
-   justify-content: center;
    flex-direction: column;
   }
 
@@ -14,6 +11,7 @@ a{
   width: 100%;
   cursor: pointer;
   transition: 0.2s;
+  color:#fff;
 }
 
 a:hover{
