@@ -10,7 +10,11 @@
     border-radius: 50px;
 }
 
-.button-right{
-    position: relative;
-    transform: translateX(96%); 
+.dialogs{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.user{
+    text-align: center;
 }

@@ -1,15 +1,15 @@
 import React from "react"
-import "./Dialog.css"
+import "./Message.css"
 
-function Dialog (props){
+function Message (props){
     return(
-        <div className="dialog">
+        <div className="messsage">
             <div className="justify-content-end">
-            <h3>{props.name} сообщает:</h3>
+            <h3>{props.name} </h3>
             </div>
             <p className="message-text">{props.message}</p>
         </div>
     )
 }
 
-export default Dialog
+export default Message
