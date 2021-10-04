@@ -15,8 +15,23 @@
 
   .post-data{
     position: relative;
+    display: flex;
+    align-items: center;
   }
 
   .post{
     margin: 20px 5px;
+  }
+
+  .post-data h2{
+    margin-left: 10px;
+  }
+
+  .likes{
+    background-color: rgb(255, 0, 0);
+    width: 7%;
+    border-radius: 20px;
+    text-align: center;
+    padding: 2px;
+    margin-top:7px;
   }

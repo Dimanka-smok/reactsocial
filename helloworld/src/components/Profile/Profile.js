@@ -1,16 +1,16 @@
 import React from "react"
 import "./Profile.css"
-import Pes from "../../img/pes.jpg"
 import Posts from "../Posts/Posts"
+import ProfileInfo from "./ProfileInfo/ProfileInfo"
 
-function Profile(){
+
+function Profile(props){
     return(
         <div className="profile">
             <div className="me">
-                <img src={Pes}/>
-                <h2>Дмитрий</h2>
+                <ProfileInfo/> 
             </div>
-            <Posts/>
+            <Posts postData={props.profilePage.postData}/>
         </div>
     )
 }

@@ -8,10 +8,11 @@ function Post(props){
     return(
          <div className="post">
             <div className="post-data">
-                <img src={props.img}/>
-                <h3>{props.name}</h3>
+                <img src={Pes}/>
+                <h2>Дмитрий</h2>
             </div>
             <p>{props.message}</p>
+            <p className="likes">{props.likes} Likes</p>
         </div>
     )
 }
