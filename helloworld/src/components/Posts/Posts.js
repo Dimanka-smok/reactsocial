@@ -4,10 +4,16 @@ import Post from "./Post/Post";
 
 
 function Posts(props) {
+
+    let postText = React.createRef()
+
+    let addPost = ()=>{
+        alert(postText.current.value)
+    }
     return(
         <div className="posts">
-            <input placeholder="Какие у вас новости?"/>
-            <button>Добавить пост</button>
+            <input ref={postText} placeholder="Какие у вас новости?"/>
+            <button onClick={addPost}>Добавить пост</button>
             {
                 props.postData.map((object)=><Post message={object.message} id={object.id} likes={object.likes}/>)
             }

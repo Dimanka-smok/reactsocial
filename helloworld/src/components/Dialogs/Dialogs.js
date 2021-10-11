@@ -7,6 +7,15 @@ import DialogItem from "./DialogsItems/DialogsItem";
 
 
 function Dialogs(props){
+
+    let messageText = React.createRef()
+
+    let addMessage = ()=>{
+        alert(messageText.current.value)
+    }
+
+
+    console.log(props)
     return(
         <div className="dialogs">
             <div className="dialog-user">
@@ -19,8 +28,8 @@ function Dialogs(props){
                     props.messageData.map((object)=> <Message message={object.message} id={object.id}/>)
                 }
                 <div className="addMessage">
-                    <input placeholder="Напишите сообщение..." type="text"/>
-                    <button>Отправить</button>
+                    <input ref={messageText} placeholder="Напишите сообщение..." type="text"/>
+                    <button onClick={addMessage}>Отправить</button>
                 </div>
             </div>
         </div>
