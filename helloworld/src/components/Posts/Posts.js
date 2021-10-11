@@ -8,7 +8,8 @@ function Posts(props) {
     let postText = React.createRef()
 
     let addPost = ()=>{
-        alert(postText.current.value)
+        props.addPost(postText.current.value)
+        postText.current.value=""
     }
     return(
         <div className="posts">

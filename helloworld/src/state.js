@@ -1,3 +1,5 @@
+import { reRender } from "./Render"
+
 
 let state={
     profilePage:{
@@ -33,7 +35,37 @@ let state={
             {name:"Вячеслав", id:4},
             {name:"Алексей", id:5},
         ]
-    }
+    },
+
+    
 }
+
+
+ export let addPost = (postText)=>{
+    let newPost = {
+        message: postText,
+        id: 4,
+        likes: 0,
+    }
+
+    state.profilePage.postData.unshift(newPost)
+    reRender(state)
+}
+
+export let sendMessage = (messageText) =>{
+    let newMessage = {
+        message: messageText,
+        id: 5,
+    }
+
+    state.dialogPage.messageData.push(newMessage)
+    reRender(state)
+}
+
+
+
+
+
+
 
 export default state
