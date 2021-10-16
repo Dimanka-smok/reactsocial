@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {addPost, sendMessage} from "./state.js"
+import {addPost, onChangePostText, sendMessage} from "./state.js"
 
 
  export let reRender = (state)=>{
   ReactDOM.render(
     <React.StrictMode>
-      <App state={state} sendMessage={sendMessage} addPost={addPost} />
+      <App onChangePostText={onChangePostText} state={state} sendMessage={sendMessage} addPost={addPost} />
     </React.StrictMode>,
     document.getElementById('root')
   );

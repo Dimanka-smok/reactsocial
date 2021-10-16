@@ -7,7 +7,9 @@ let state={
             {message:"Напомним, Death Stranding Director’s", id:1, likes:5},
             {message:"«Меня зовут Пророк» — релизный трейлер Crysis Remastered Trilogy", id:2, likes:8},
             {message:"Руководитель Deathloop раскрывает секреты игрового дизайна", id:3, likes:22},
-        ]
+        ],
+
+        newPostText: "testText"
     },
   
     dialogPage:{
@@ -39,6 +41,12 @@ let state={
 
     
 }
+
+export let onChangePostText = (text)=>{
+    state.profilePage.newPostText=text
+    reRender(state)
+}
+
 
 
  export let addPost = (postText)=>{
