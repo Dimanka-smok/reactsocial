@@ -1,4 +1,4 @@
-import { reRender } from "./Render"
+// import { reRender } from "./index.js"
 
 
 let state={
@@ -9,7 +9,7 @@ let state={
             {message:"Руководитель Deathloop раскрывает секреты игрового дизайна", id:3, likes:22},
         ],
 
-        newPostText: "testText"
+        newPostText: "Какие у вас Новости?"
     },
   
     dialogPage:{
@@ -26,7 +26,9 @@ let state={
             {message: "Здравствуйте.", id: "2"},
             {message: "Здарова. Пойдешь гулять?", id: "3"},
             {message: "Привет. Ты вечером свободен?", id: "4"},
-        ]
+        ],
+
+        newMessageText:"Всем привет!"
     },
 
     userPage:{
@@ -42,12 +44,23 @@ let state={
     
 }
 
+let reRender =()=>{
+
+}
+
+export let subscribe =(reRenderFromIndex)=>{
+    reRender=reRenderFromIndex
+}
+
 export let onChangePostText = (text)=>{
     state.profilePage.newPostText=text
     reRender(state)
 }
 
-
+export let onChangeMessage=(text)=>{
+    state.dialogPage.newMessageText=text
+    reRender(state)
+}
 
  export let addPost = (postText)=>{
     let newPost = {
