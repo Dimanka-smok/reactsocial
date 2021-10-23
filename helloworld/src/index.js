@@ -2,17 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {addPost, onChangeMessage, onChangePostText, sendMessage, subscribe} from "./state.js"
-import state from './state'
+import store from "./state";
 
 
-export let reRender = (state)=>{
+export let reRender = (state) => {
     ReactDOM.render(
         <React.StrictMode>
-            <App onChangePostText={onChangePostText} onChangeMessage={onChangeMessage} state={state} sendMessage={sendMessage} addPost={addPost} />
+            <App state={state}
+                 onChangePostText={store.onChangePostText.bind(store)}
+                 onChangeMessage={store.onChangeMessage.bind(store)}
+                 sendMessage={store.sendMessage.bind(store)}
+                 addPost={store.addPost.bind(store)}/>
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
-reRender(state)
-subscribe(reRender)
+reRender(store._state)
+store.subscribe(reRender)

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Posts.css"
 import Post from "./Post/Post";
-import { onChangePostText } from "../../state";
 
 
 function Posts(props) {
