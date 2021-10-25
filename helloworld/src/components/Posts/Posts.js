@@ -1,6 +1,7 @@
 import React from "react";
 import "./Posts.css"
 import Post from "./Post/Post";
+import {addPostAC, onChangePostTextAC} from "../../state";
 
 
 function Posts(props) {
@@ -8,17 +9,12 @@ function Posts(props) {
 
     let addPost = () => {
         if (postText.current.value.length > 0) {
-            props.dispatch({
-                type: "ADD-POST"
-            })
+            props.dispatch(addPostAC())
         }
     }
 
     let onChangePostText = () => {
-        props.dispatch({
-            type: "POST-CHANGE",
-            text: postText.current.value
-        })
+        props.dispatch(onChangePostTextAC(postText.current.value))
     }
 
     return (

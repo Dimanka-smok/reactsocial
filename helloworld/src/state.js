@@ -1,8 +1,12 @@
-// import { reRender } from "./index.js"
+const ADD_POST="ADD-POST"
+const POST_CHANGE="POST-CHANGE"
+const SEND_MESSAGE="SEND-MESSAGE"
+const MESSAGE_CHANGE="MESSAGE-CHANGE"
+
 let store = {
 
     dispatch(action) {
-        if (action.type === "ADD-POST") {
+        if (action.type === ADD_POST) {
             let newPost = {
                 message: this._state.profilePage.newPostText,
                 id: 4,
@@ -13,12 +17,12 @@ let store = {
             this.reRender(this._state)
         }
 
-        else if (action.type === "POST-CHANGE") {
+        else if (action.type === POST_CHANGE) {
             this._state.profilePage.newPostText = action.text
             this.reRender(this._state)
         }
 
-        else if (action.type === "SEND-MESSAGE") {
+        else if (action.type === SEND_MESSAGE ) {
             let newMessage = {
                 message: this._state.dialogPage.newMessageText,
                 id: 5,
@@ -28,7 +32,7 @@ let store = {
             this.reRender(this._state)
         }
 
-        else if(action.type==="MESSAGE-CHANGE"){
+        else if(action.type=== MESSAGE_CHANGE){
             this._state.dialogPage.newMessageText = action.text
             this.reRender(this._state)
         }
@@ -84,6 +88,20 @@ let store = {
     subscribe(reRenderFromIndex) {
         this.reRender = reRenderFromIndex
     },
+}
+
+export let addPostAC = ()=>{
+    return{
+        type: "ADD-POST",
+        id: 1
+    }
+}
+
+export let onChangePostTextAC=(text)=>{
+    return{
+        type: "POST-CHANGE",
+        text: text
+    }
 }
 
 export default store
