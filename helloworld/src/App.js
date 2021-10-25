@@ -8,21 +8,20 @@ import Users from './components/Users/Users';
 
 
 function App(props) {
+    console.log(props)
     return (
         <div className="wrapper">
             <BrowserRouter>
                 <Header/>
                 <Navbar/>
                 <div className="wrapper-content">
-                    <Route path="/profile" render={() => <Profile onChangePostText={props.onChangePostText}
-                                                                  addPost={props.addPost}
+                    <Route path="/profile" render={() => <Profile dispatch={props.dispatch}
                                                                   newPostText={props.state.profilePage.newPostText}
                                                                   postData={props.state.profilePage.postData}
                     />}
                     />
-                    <Route path="/messager" render={() => <Dialogs onChangeMessage={props.onChangeMessage}
+                    <Route path="/messager" render={() => <Dialogs dispatch={props.dispatch}
                                                                    newMessageText={props.state.dialogPage.newMessageText}
-                                                                   sendMessage={props.sendMessage}
                                                                    messageData={props.state.dialogPage.messageData}
                                                                    dialogData={props.state.dialogPage.dialogData}/>}/>
                     <Route path="/users" render={() => <Users friend={props.state.userPage.friends}/>}/>

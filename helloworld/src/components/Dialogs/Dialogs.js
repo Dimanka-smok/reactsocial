@@ -10,12 +10,18 @@ function Dialogs(props) {
     let messageText = React.createRef()
 
     let addMessage = () => {
-        props.sendMessage(messageText.current.value)
-        messageText.current.value = ""
+        if (messageText.current.value.length > 0) {
+            props.dispatch({
+                type: "SEND-MESSAGE"
+            })
+        }
     }
 
     let onChangeMessage = () => {
-        props.onChangeMessage(messageText.current.value)
+        props.dispatch({
+            type: "MESSAGE-CHANGE",
+            text: messageText.current.value
+        })
     }
 
     return (

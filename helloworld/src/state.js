@@ -1,5 +1,39 @@
 // import { reRender } from "./index.js"
 let store = {
+
+    dispatch(action) {
+        if (action.type === "ADD-POST") {
+            let newPost = {
+                message: this._state.profilePage.newPostText,
+                id: 4,
+                likes: 0,
+            }
+
+            this._state.profilePage.postData.unshift(newPost)
+            this.reRender(this._state)
+        }
+
+        else if (action.type === "POST-CHANGE") {
+            this._state.profilePage.newPostText = action.text
+            this.reRender(this._state)
+        }
+
+        else if (action.type === "SEND-MESSAGE") {
+            let newMessage = {
+                message: this._state.dialogPage.newMessageText,
+                id: 5,
+            }
+
+            this._state.dialogPage.messageData.push(newMessage)
+            this.reRender(this._state)
+        }
+
+        else if(action.type==="MESSAGE-CHANGE"){
+            this._state.dialogPage.newMessageText = action.text
+            this.reRender(this._state)
+        }
+    },
+
     _state: {
         profilePage: {
             postData: [
@@ -13,18 +47,18 @@ let store = {
 
         dialogPage: {
             dialogData: [
-                {name: "Владимир", id: "1"},
-                {name: "Мария", id: "2"},
-                {name: "Михаил", id: "3"},
-                {name: "Вячеслав", id: "4"},
-                {name: "Алексей", id: "5"},
+                {name: "Владимир", id: 1},
+                {name: "Мария", id: 2},
+                {name: "Михаил", id: 3},
+                {name: "Вячеслав", id: 4},
+                {name: "Алексей", id: 5},
             ],
 
             messageData: [
-                {message: "Привет. Как дела?", id: "1"},
-                {message: "Здравствуйте.", id: "2"},
-                {message: "Здарова. Пойдешь гулять?", id: "3"},
-                {message: "Привет. Ты вечером свободен?", id: "4"},
+                {message: "Привет. Как дела?", id: 1},
+                {message: "Здравствуйте.", id: 2},
+                {message: "Здарова. Пойдешь гулять?", id: 3},
+                {message: "Привет. Ты вечером свободен?", id: 4},
             ],
 
             newMessageText: "Всем привет!"
@@ -49,37 +83,6 @@ let store = {
 
     subscribe(reRenderFromIndex) {
         this.reRender = reRenderFromIndex
-    },
-
-    onChangePostText(text) {
-        this._state.profilePage.newPostText = text
-        this.reRender(this._state)
-    },
-
-    onChangeMessage(text) {
-        this._state.dialogPage.newMessageText = text
-        this.reRender(this._state)
-    },
-
-    addPost(postText) {
-        let newPost = {
-            message: postText,
-            id: 4,
-            likes: 0,
-        }
-
-        this._state.profilePage.postData.unshift(newPost)
-        this.reRender(this._state)
-    },
-
-    sendMessage(messageText) {
-        let newMessage = {
-            message: messageText,
-            id: 5,
-        }
-
-        this._state.dialogPage.messageData.push(newMessage)
-        this.reRender(this._state)
     },
 }
 

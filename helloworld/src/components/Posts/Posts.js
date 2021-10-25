@@ -4,24 +4,32 @@ import Post from "./Post/Post";
 
 
 function Posts(props) {
-
     let postText = React.createRef()
 
-    let addPost = ()=>{
-        props.addPost(postText.current.value)
-        postText.current.value=""
+    let addPost = () => {
+        if (postText.current.value.length > 0) {
+            props.dispatch({
+                type: "ADD-POST"
+            })
+        }
     }
 
-    let onChangePostText =()=>{
-        props.onChangePostText(postText.current.value)
+    let onChangePostText = () => {
+        props.dispatch({
+            type: "POST-CHANGE",
+            text: postText.current.value
+        })
     }
 
-    return(
+    return (
         <div className="posts">
-            <input ref={postText}  value={props.newPostText} onChange={onChangePostText} placeholder="Какие у вас новости?"/>
+            <input ref={postText}
+                   value={props.newPostText}
+                   onChange={onChangePostText}
+                   placeholder="Какие у вас новости?"/>
             <button onClick={addPost}>Добавить пост</button>
             {
-                props.postData.map((object)=><Post message={object.message} id={object.id} likes={object.likes}/>)
+                props.postData.map((object) => <Post message={object.message} id={object.id} likes={object.likes}/>)
             }
         </div>
     )
