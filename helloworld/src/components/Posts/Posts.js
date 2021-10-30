@@ -1,7 +1,7 @@
 import React from "react";
 import "./Posts.css"
 import Post from "./Post/Post";
-import {addPostAC, onChangePostTextAC} from "../../state";
+import {addPostAC, onChangePostTextAC} from "../Data/ProfileReduser";
 
 
 function Posts(props) {
