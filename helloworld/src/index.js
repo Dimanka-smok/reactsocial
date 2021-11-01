@@ -15,5 +15,5 @@ export let reRender = (state) => {
         document.getElementById('root')
     );
 }
-reRender(store._state)
+reRender(store.getState())
 store.subscribe(reRender)

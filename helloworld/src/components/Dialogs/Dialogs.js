@@ -1,9 +1,8 @@
 import React from "react";
 import "./Dialogs.css"
 import Message from "./Dialog/Message";
-import {NavLink} from "react-router-dom";
 import DialogItem from "./DialogsItems/DialogsItem";
-import {addMessageAC, onChangeMessageTextAC} from "../../state";
+import {addMessageAC, onChangeMessageTextAC} from "../Data/MessageReduser";
 
 
 function Dialogs(props) {

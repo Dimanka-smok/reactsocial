@@ -8,7 +8,6 @@ import Users from './components/Users/Users';
 
 
 function App(props) {
-    console.log(props)
     return (
         <div className="wrapper">
             <BrowserRouter>

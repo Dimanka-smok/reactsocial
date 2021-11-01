@@ -1,32 +1,12 @@
 import {ProfileReduser} from "./components/Data/ProfileReduser";
-
-const ADD_POST="ADD-POST"
-const POST_CHANGE="POST-CHANGE"
-const SEND_MESSAGE="SEND-MESSAGE"
-const MESSAGE_CHANGE="MESSAGE-CHANGE"
+import {MessageReduser} from "./components/Data/MessageReduser";
 
 let store = {
 
-
-
     dispatch(action) {
-        this._state=ProfileReduser(this._state.profilePage,action)
+        this._state.dialogPage = MessageReduser(this._state.dialogPage, action)
+        this._state.profilePage = ProfileReduser(this._state.profilePage,action)
         this.reRender(this._state)
-
-        if (action.type === SEND_MESSAGE ) {
-            let newMessage = {
-                message: this._state.dialogPage.newMessageText,
-                id: 5,
-            }
-
-            this._state.dialogPage.messageData.push(newMessage)
-            this.reRender(this._state)
-        }
-
-        else if(action.type=== MESSAGE_CHANGE){
-            this._state.dialogPage.newMessageText = action.text
-            this.reRender(this._state)
-        }
     },
 
     _state: {
@@ -79,19 +59,9 @@ let store = {
     subscribe(reRenderFromIndex) {
         this.reRender = reRenderFromIndex
     },
-}
 
-export let addMessageAC=()=>{
-    return{
-        type:"SEND-MESSAGE",
-        id:1
-    }
-}
-
-export let onChangeMessageTextAC =(text)=>{
-    return{
-        type:"MESSAGE-CHANGE",
-        text:text
+    getState(){
+         return this._state
     }
 }
 
