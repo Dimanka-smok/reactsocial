@@ -2,19 +2,20 @@ import './App.css';
 import Navbar from "./components/Navbar/Navbar";
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Route, Redirect} from "react-router-dom";
 import Dialogs from './components/Dialogs/Dialogs';
 import Users from './components/Users/Users';
 
 
 function App(props) {
+    console.log(props)
     return (
         <div className="wrapper">
             <BrowserRouter>
                 <Header/>
                 <Navbar/>
                 <div className="wrapper-content">
-                    <Route path="/profile" render={() => <Profile dispatch={props.dispatch}
+                    <Route path="/p" render={() => <Profile dispatch={props.dispatch}
                                                                   newPostText={props.state.profilePage.newPostText}
                                                                   postData={props.state.profilePage.postData}
                     />}

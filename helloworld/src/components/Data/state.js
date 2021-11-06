@@ -1,5 +1,5 @@
-import {ProfileReduser} from "./components/Data/ProfileReduser";
-import {MessageReduser} from "./components/Data/MessageReduser";
+import {ProfileReduser} from "./ProfileReduser";
+import {MessageReduser} from "./MessageReduser";
 
 let store = {
 

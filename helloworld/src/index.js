@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import store from "./state";
+import {store} from "./components/Data/store"
 
 
 export let reRender = (state) => {
@@ -16,4 +16,6 @@ export let reRender = (state) => {
     );
 }
 reRender(store.getState())
-store.subscribe(reRender)
+store.subscribe(()=>{
+    reRender(store.getState())
+})

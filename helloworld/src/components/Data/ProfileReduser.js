@@ -1,7 +1,17 @@
 const ADD_POST="ADD-POST"
 const POST_CHANGE="POST-CHANGE"
 
- export let ProfileReduser = (state, action) => {
+let initialState = {
+    postData: [
+        {message: "Напомним, Death Stranding Director’s", id: 1, likes: 5},
+        {message: "«Меня зовут Пророк» — релизный трейлер Crysis Remastered Trilogy", id: 2, likes: 8},
+        {message: "Руководитель Deathloop раскрывает секреты игрового дизайна", id: 3, likes: 22},
+    ],
+
+    newPostText: "Какие у вас Новости?"
+}
+
+ export let ProfileReduser = (state=initialState, action) => {
     if (action.type === ADD_POST) {
         let newPost = {
             message: state.newPostText,
